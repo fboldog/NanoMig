@@ -1,3 +1,4 @@
+set is_sdv2 [lindex $argv 0]
 set_device GW5A-LV25MG121NC1/I0 -name GW5A-25A
 
 add_file nanomig.v
@@ -82,6 +83,13 @@ add_file tang/primer25k/gowin_dpb/ide_dpram.v
 add_file tang/primer25k/top.sv
 add_file tang/primer25k/sdram.v
 add_file tang/primer25k/nanomig.cst
+if { $is_sdv2 == "true" } {
+    puts "using v2"
+    add_file tang/primer25k/nanomig_sdv2.cst
+} else {
+    puts "using original"
+    add_file tang/primer25k/nanomig_sdorig.cst
+}
 add_file tang/primer25k/nanomig.sdc
 add_file fx68k/microrom.mem
 add_file fx68k/nanorom.mem

@@ -92,6 +92,8 @@
         <File path="tg68k/TG68K_Pack.vhd" type="file.vhdl" enable="1"/>
         <File path="tg68k/TG68KdotC_Kernel.vhd" type="file.vhdl" enable="1"/>
         <File path="tang/primer25k/nanomig.cst" type="file.cst" enable="1"/>
+        <File path="tang/primer25k/nanomig_sdv2.cst" type="file.cst" enable="1"/>
+        <File path="tang/primer25k/nanomig_sdorig.cst" type="file.cst" enable="1"/>
         <File path="tang/primer25k/nanomig.sdc" type="file.sdc" enable="1"/>
         <File path="fx68k/microrom.mem" type="file.other" enable="1"/>
         <File path="fx68k/nanorom.mem" type="file.other" enable="1"/>
