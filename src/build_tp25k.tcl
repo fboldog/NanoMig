@@ -82,12 +82,15 @@ add_file tang/primer25k/gowin_dpb/sector_dpram.v
 add_file tang/primer25k/gowin_dpb/ide_dpram.v
 add_file tang/primer25k/top.sv
 add_file tang/primer25k/sdram.v
+#add_file tang/primer25k/nanomig.cst
 if { $is_sdv2 == "true" } {
     puts "using v2"
     add_file tang/primer25k/nanomig_v2.cst
+#    add_file tang/primer25k/nanomig_sdv2.cst
 } else {
     puts "using original"
     add_file tang/primer25k/nanomig.cst
+#    add_file tang/primer25k/nanomig_sdorig.cst
 }
 add_file tang/primer25k/nanomig.sdc
 add_file fx68k/microrom.mem
@@ -99,7 +102,11 @@ add_file tg68k/TG68KdotC_Kernel.vhd
 add_file misc/amiga_xml.hex
 
 set_option -synthesis_tool gowinsynthesis
-set_option -output_base_name nanomig_tp25k
+if { $is_sdv2 == "true" } {
+    set_option -output_base_name nanomig_tp25k_sdv2
+} else {
+    set_option -output_base_name nanomig_tp25k
+}
 set_option -verilog_std sysv2017
 set_option -top_module top
 set_option -use_mspi_as_gpio 1
